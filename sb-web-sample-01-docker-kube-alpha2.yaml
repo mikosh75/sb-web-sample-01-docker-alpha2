@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sb-web-sample-01-docker-alpha2
+  labels:
+    run: sb-web-sample-01-docker-alpha2
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 443
+    targetPort: 443
+    protocol: TCP
+    name: https
+  selector:
+    run: sb-web-sample-01-docker-alpha2
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sb-web-sample-01-docker-alpha2
+spec:
+  selector:
+    matchLabels:
+      run: sb-web-sample-01-docker-alpha2
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: sb-web-sample-01-docker-alpha2
+    spec:
+      containers:
+      - name: sb-web-sample-01-docker-alpha2
+        image: exomacr.azurecr.io/sb-web-sample-01-docker-alpha2
+        ports:
+        - containerPort: 443
