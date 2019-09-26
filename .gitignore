@@ -1,2 +1,9 @@
+
+# Created by https://www.gitignore.io/api/maven
+# Edit at https://www.gitignore.io/?templates=maven
+
+### Maven ###
+target/
 *.p12
-target
+
+# End of https://www.gitignore.io/api/maven
