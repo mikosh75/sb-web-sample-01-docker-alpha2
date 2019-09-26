@@ -24,7 +24,7 @@ http://localhost
 ## Containerize
 1. Build a docker image using `Dockerfile`:
    ```
-   docker build -t sb-web-sample-01-docker-alpha1 .
+   docker build -t sb-web-sample-01-docker-alpha2 .
    ```
 2. Run docker image locally
    ```
@@ -34,5 +34,5 @@ http://localhost
 
 ## Deploy to K8S
 ```shell
-kubectl apply -f sb-web-sample-01-docker-kube.yaml
+kubectl apply -f sb-web-sample-01-docker-kube-alpha2.yaml
 ```
